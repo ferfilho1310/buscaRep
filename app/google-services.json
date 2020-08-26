@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "701241568481",
+    "firebase_url": "https://buscarep-c6dad.firebaseio.com",
+    "project_id": "buscarep-c6dad",
+    "storage_bucket": "buscarep-c6dad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701241568481:android:ded060e428c074c4a5dba0",
+        "android_client_info": {
+          "package_name": "com.example.buscarep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701241568481-fiofe0uk3m5bo6fsvpughp61kadmc7df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO-ur6Upf2ImesnX0it-AoV0yN25rZJ8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701241568481-fiofe0uk3m5bo6fsvpughp61kadmc7df.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
