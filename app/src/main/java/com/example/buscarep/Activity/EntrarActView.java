@@ -8,14 +8,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.buscarep.Controlles.EntrarController;
-import com.example.buscarep.Daos.UserDao;
+import com.example.buscarep.Controllers.EntrarController;
 import com.example.buscarep.DialogHelpers.AbstratcAlertDialog;
-import com.example.buscarep.Interfaces.IEntrarController;
 import com.example.buscarep.Model.Usuario;
 import com.example.buscarep.R;
-import com.example.buscarep.Util.GetViewData;
-import com.example.buscarep.Util.MensagemSistema;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class EntrarActView extends AppCompatActivity implements View.OnClickListener {

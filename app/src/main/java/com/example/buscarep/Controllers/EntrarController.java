@@ -1,4 +1,4 @@
-package com.example.buscarep.Controlles;
+package com.example.buscarep.Controllers;
 
 import android.app.Activity;
 import android.widget.Button;
