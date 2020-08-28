@@ -7,7 +7,7 @@ public class MensagemSistema {
     public static String BUTTON_DIALOG_OK = "OK";
     public static String TITLE_ATENCAO = "Atenção";
     public static String ERRO_ENTRAR = "Erro ao entrar no aplicativo";
-    public static String OK = "ENTRAR";
-
+    public static String ENTRAR = "ENTRAR";
+    public static String TAG = "TAG";
 
 }

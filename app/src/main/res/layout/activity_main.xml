@@ -7,6 +7,14 @@
     tools:context=".Activity.EntrarActView">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/corner_window_enter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,15 +33,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bem Vindo ao Busca Rep"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
+            android:text="BuscaRep"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
             android:textStyle="italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Digite os dados para entrar"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="O App para você encontrar um cantinho \n para você morar"
             android:textSize="15sp" />
     </LinearLayout>
 

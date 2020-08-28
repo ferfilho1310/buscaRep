@@ -10,5 +10,5 @@ public interface IUserDao {
 
     void entrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button);
 
-    int cadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button);
+    void cadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button);
 }

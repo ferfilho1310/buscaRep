@@ -54,7 +54,7 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public int cadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button) {
+    public void cadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button) {
 
         firebaseAuth.createUserWithEmailAndPassword(usuario.getmEmail(),usuario.getmSenha()).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
             @Override
@@ -67,8 +67,6 @@ public class UserDao implements IUserDao {
 
             }
         });
-
-        return 0;
     }
 
 }
