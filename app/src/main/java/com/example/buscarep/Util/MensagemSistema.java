@@ -9,5 +9,7 @@ public class MensagemSistema {
     public static String ERRO_ENTRAR = "Erro ao entrar no aplicativo";
     public static String ENTRAR = "ENTRAR";
     public static String TAG = "TAG";
+    public static String ANUNCIAR = "Anunciar";
+    public static String INICIO = "Início";
 
 }

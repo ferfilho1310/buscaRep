@@ -1,29 +1,25 @@
 package com.example.buscarep.DialogHelpers;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.buscarep.R;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-public class ButtomSheetDialog extends BottomSheetDialogFragment {
+public class ButtomSheetDialogEmailSenhaVazio extends BottomSheetDialogFragment {
 
-    private static ButtomSheetDialog buttomSheetDialog;
+    private static ButtomSheetDialogEmailSenhaVazio buttomSheetDialogEmailSenhaVazio;
 
-    public static synchronized ButtomSheetDialog getInstance() {
-        buttomSheetDialog = new ButtomSheetDialog();
-        return buttomSheetDialog;
+    public static synchronized ButtomSheetDialogEmailSenhaVazio getInstance() {
+        buttomSheetDialogEmailSenhaVazio = new ButtomSheetDialogEmailSenhaVazio();
+        return buttomSheetDialogEmailSenhaVazio;
     }
 
     @Nullable
@@ -37,7 +33,7 @@ public class ButtomSheetDialog extends BottomSheetDialogFragment {
                 dismiss();
             }
         });
-
         return view;
     }
+
 }

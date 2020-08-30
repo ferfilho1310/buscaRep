@@ -1,9 +1,7 @@
 package com.example.buscarep.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +10,11 @@ import android.widget.TextView;
 
 import com.example.buscarep.Controllers.EntrarController;
 import com.example.buscarep.DialogHelpers.AbstratcAlertDialog;
-import com.example.buscarep.DialogHelpers.ButtomSheetDialog;
+import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailSenhaVazio;
+import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailVazio;
 import com.example.buscarep.Model.Usuario;
 import com.example.buscarep.R;
 import com.example.buscarep.Util.MensagemSistema;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class EntrarActView extends AppCompatActivity implements View.OnClickListener {
@@ -29,13 +26,10 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
     private Button btn_entrar;
     private ProgressBar pgEntrar;
 
-    ButtomSheetDialog buttomSheetDialog;
-
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.entrar);
 
         getSupportActionBar().hide();
 
@@ -53,10 +47,9 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_entrar:
                 Usuario usuario = new Usuario();
-
                 usuario.setmEmail(edt_email.getText().toString());
                 usuario.setmSenha(edt_senha.getText().toString());
 
@@ -67,17 +60,19 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void  mValidacaoEmailSenha(Usuario usuario){
-        if(usuario.mEmailVazio() && usuario.mSenhaVazio()){
-            ButtomSheetDialog.getInstance().show(getSupportFragmentManager(), MensagemSistema.TAG);
-        } else if(usuario.mEmailVazio()){
+    public void mValidacaoEmailSenha(Usuario usuario) {
+        if (usuario.mEmailVazio() && usuario.mSenhaVazio()) {
+            ButtomSheetDialogEmailSenhaVazio.getInstance().show(getSupportFragmentManager(),MensagemSistema.TAG);
+        } else if (usuario.mEmailVazio()) {
             edt_email.requestFocus();
-            AbstratcAlertDialog.getInstance().mShowInfo(EntrarActView.this,"Informe seu E-mail");
-        } else if(usuario.mSenhaVazio()){
+            ButtomSheetDialogEmailVazio.getInstance().show(getSupportFragmentManager(),MensagemSistema.TAG);
+        } else if (usuario.mSenhaVazio()) {
             edt_senha.requestFocus();
-            AbstratcAlertDialog.getInstance().mShowInfo(EntrarActView.this,"Informe sua senha");
+            AbstratcAlertDialog.getInstance().mShowInfo(EntrarActView.this, "Informe sua senha");
         } else {
-            EntrarController.getInstance().mEntrar(usuario, EntrarActView.this, pgEntrar,btn_entrar);
+            EntrarController.getInstance().mEntrar(usuario, EntrarActView.this, pgEntrar, btn_entrar);
         }
     }
+
+
 }

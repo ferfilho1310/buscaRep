@@ -8,12 +8,23 @@ import java.lang.annotation.RetentionPolicy;
 public final class SharedEnums {
 
     @Retention(RetentionPolicy.RUNTIME)
-    @IntDef({ResultadoEntraruser.mSucesso,ResultadoEntraruser.mNadaFazer})
-    public @interface ResultadoEntraruser{
+    @IntDef({quantidadeFragment.quantidadeFragment})
+    public @interface quantidadeFragment {
 
-        int mNadaFazer = 0,
+        int quantidadeFragment = 2,
 
-        mSucesso = 1;
+        firstFragment = 0,
 
+        secondFragment = 1;
+
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @IntDef({numeroTab.firstTab,numeroTab.secondTab})
+    public @interface numeroTab{
+
+        int firstTab = 0,
+
+        secondTab = 1;
     }
 }
