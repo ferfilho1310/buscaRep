@@ -1,6 +1,7 @@
 package com.example.buscarep.Enums;
 
 import androidx.annotation.IntDef;
+import androidx.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -26,5 +27,13 @@ public final class SharedEnums {
         int firstTab = 0,
 
         secondTab = 1;
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @StringDef({ordenacaoDb.ordenacaoDbBuscaAnuncio})
+    public @interface ordenacaoDb{
+
+        String ordenacaoDbBuscaAnuncio = "data";
+
     }
 }
