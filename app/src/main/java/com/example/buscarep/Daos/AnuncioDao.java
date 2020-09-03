@@ -17,7 +17,7 @@ public class AnuncioDao implements IAnuncioDao {
     CollectionReference collectionAnuncios = abriBancoAnuncios.collection("Anuncios")
             .document("teste")
             .collection("anunciosPorCliente");
-    FirestoreRecyclerOptions firestoreRecyclerOptions;
+    FirestoreRecyclerOptions<Anuncio> firestoreRecyclerOptions;
     Query query;
 
     private static AnuncioDao anuncioDao;
@@ -28,7 +28,7 @@ public class AnuncioDao implements IAnuncioDao {
     }
 
     @Override
-    public FirestoreRecyclerOptions buscaAnuncios() {
+    public FirestoreRecyclerOptions<Anuncio> buscaAnuncios() {
 
         query = collectionAnuncios.orderBy(SharedEnums.ordenacaoDb.ordenacaoDbBuscaAnuncio, Query.Direction.ASCENDING);
 

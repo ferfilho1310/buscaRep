@@ -16,7 +16,7 @@ public class AnuncioController implements IAnuncioController {
     }
 
     @Override
-    public FirestoreRecyclerOptions buscaAnuncios() {
+    public FirestoreRecyclerOptions<Anuncio> buscaAnuncios() {
         return AnuncioDao.getInstance().buscaAnuncios();
     }
 }

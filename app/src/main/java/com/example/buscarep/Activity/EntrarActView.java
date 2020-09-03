@@ -14,6 +14,7 @@ import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailSenhaVazio;
 import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailVazio;
 import com.example.buscarep.Model.Usuario;
 import com.example.buscarep.R;
+import com.example.buscarep.Util.IntentHelper;
 import com.example.buscarep.Util.MensagemSistema;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -56,6 +57,7 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
                 mValidacaoEmailSenha(usuario);
                 break;
             case R.id.txt_cadastrar:
+                IntentHelper.getInstance().SimpleIntent(this,CadastrarActView.class);
                 break;
         }
     }

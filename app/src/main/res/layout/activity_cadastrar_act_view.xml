@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.EntrarActView">
+    tools:context=".Activity.CadastrarActView">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,85 +22,68 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:gravity="center"
-            android:padding="20dp"
-            android:text="Para fazer seu anúncio informe seus dados para entrar"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:text=""
+            android:padding="10dp"
+            android:text="Preencha os dados para realizar seu cadastro"
             android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
-            app:hintTextColor="@color/colorPrimaryDark">
-
+            android:hint="Nome">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp" />
-
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
-            app:hintTextColor="@color/colorPrimaryDark">
-
+            android:hint="E-mail">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_senha"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp" />
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirma Senha">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_entrar"
+            android:layout_marginTop="12dp"
+            android:text="Cadastrar"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_radius"
-            android:padding="15dp"
-            android:text="Entrar"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/txt_cadastrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:paddingTop="8dp"
-            android:text="Não é Cadastrado ? Cadastre-se."
-            android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry" />
-
-        <ProgressBar
-            android:id="@+id/prb_entrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:background="@drawable/border_radius"/>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
