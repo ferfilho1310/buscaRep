@@ -6,7 +6,7 @@ import com.google.firebase.firestore.Query;
 
 public interface IAnuncioDao {
 
-    FirestoreRecyclerOptions buscaAnuncios();
+    FirestoreRecyclerOptions<Anuncio> buscaAnuncios();
 
     void cadastraAnuncios();
 

@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.buscarep.Controllers.EntrarController;
+import com.example.buscarep.Controllers.UserController;
 import com.example.buscarep.DialogHelpers.AbstratcAlertDialog;
 import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailSenhaVazio;
 import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailVazio;
@@ -47,7 +47,6 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.btn_entrar:
                 Usuario usuario = new Usuario();
@@ -72,9 +71,7 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
             edt_senha.requestFocus();
             AbstratcAlertDialog.getInstance().mShowInfo(EntrarActView.this, "Informe sua senha");
         } else {
-            EntrarController.getInstance().mEntrar(usuario, EntrarActView.this, pgEntrar, btn_entrar);
+            UserController.getInstance().mEntrar(usuario, EntrarActView.this, pgEntrar, btn_entrar,txt_cadastrar);
         }
     }
-
-
 }

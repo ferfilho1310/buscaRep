@@ -2,9 +2,11 @@ package com.example.buscarep.Daos;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,18 +38,12 @@ public class UserDao implements IUserDao {
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     CollectionReference db_users = FirebaseFirestore.getInstance().collection("Users");
 
-    private static UserDao userDao;
-
-    public static synchronized UserDao getInstance() {
-        userDao = new UserDao();
-        return userDao;
-    }
-
     @Override
-    public void entrarUser(Usuario usuario, final Activity activity, final ProgressBar progressBar, final Button button) {
+    public void entrarUser(Usuario usuario, final Activity activity, final ProgressBar progressBar, final Button button, final TextView textView) {
 
         progressBar.setVisibility(View.VISIBLE);
         button.setVisibility(View.GONE);
+        textView.setVisibility(View.GONE);
 
         firebaseAuth.signInWithEmailAndPassword(usuario.getmEmail(), usuario.getmSenha())
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
@@ -57,13 +53,21 @@ public class UserDao implements IUserDao {
                         if (task.isSuccessful()) {
                             progressBar.setVisibility(View.VISIBLE);
                             button.setVisibility(View.GONE);
+                            textView.setVisibility(View.GONE);
+                            IntentHelper.getInstance().IntentWithFinish(activity, MainActivity.class);
                         } else {
                             progressBar.setVisibility(View.GONE);
                             button.setVisibility(View.VISIBLE);
+                            textView.setVisibility(View.VISIBLE);
                             AbstratcAlertDialog.getInstance().mShowInfo(activity, MensagemSistema.ERRO_ENTRAR);
                         }
                     }
-                });
+                }).addOnFailureListener(activity, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i(MensagemSistema.TAG, "Erro ao entrar" + e);
+            }
+        });
     }
 
     @Override
@@ -84,11 +88,10 @@ public class UserDao implements IUserDao {
                     map.put("Confirmar Senha", usuario.getmConfirmaSenha());
 
                     db_users.add(map);
-
-                    IntentHelper.getInstance().IntentWithFinishAndFlags(activity,MainActivity.class);
-
                     progressBar.setVisibility(View.GONE);
                     button.setVisibility(View.VISIBLE);
+
+                    IntentHelper.getInstance().IntentWithFinishAndFlags(activity, MainActivity.class);
 
                 } else if (!task.isSuccessful()) {
                     try {
@@ -112,7 +115,7 @@ public class UserDao implements IUserDao {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-
+                Log.i(MensagemSistema.TAG, "Erro desconhecido" + e);
             }
         });
     }

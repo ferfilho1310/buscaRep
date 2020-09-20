@@ -58,6 +58,22 @@ public class Usuario {
         return resultado;
     }
 
+    public boolean mConfirmaSenhaVazio(){
+        boolean resultado = false;
+        if(getmConfirmaSenha().isEmpty()){
+            resultado = true;
+        }
+        return resultado;
+    }
+
+    public boolean mNomeVazio(){
+        boolean resultado = false;
+        if(getmNome().isEmpty()){
+            resultado = true;
+        }
+        return resultado;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +

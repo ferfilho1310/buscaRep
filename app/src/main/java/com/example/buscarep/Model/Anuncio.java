@@ -10,7 +10,7 @@ public class Anuncio implements Parcelable {
 
     private List<String> fotos = new ArrayList<>();
     private String descricao;
-    private String aluguel;
+    private String valorAluguel;
     private String contato;
 
     public Anuncio() {
@@ -19,7 +19,7 @@ public class Anuncio implements Parcelable {
     protected Anuncio(Parcel in) {
         fotos = in.createStringArrayList();
         descricao = in.readString();
-        aluguel = in.readString();
+        valorAluguel = in.readString();
         contato = in.readString();
     }
 
@@ -34,6 +34,19 @@ public class Anuncio implements Parcelable {
             return new Anuncio[size];
         }
     };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringList(fotos);
+        dest.writeString(descricao);
+        dest.writeString(valorAluguel);
+        dest.writeString(contato);
+    }
 
     public List<String> getFotos() {
         return fotos;
@@ -51,12 +64,12 @@ public class Anuncio implements Parcelable {
         this.descricao = descricao;
     }
 
-    public String getAluguel() {
-        return aluguel;
+    public String getValorAluguel() {
+        return valorAluguel;
     }
 
-    public void setAluguel(String aluguel) {
-        this.aluguel = aluguel;
+    public void setValorAluguel(String valorAluguel) {
+        this.valorAluguel = valorAluguel;
     }
 
     public String getContato() {
@@ -72,21 +85,9 @@ public class Anuncio implements Parcelable {
         return "Anuncio{" +
                 "fotos=" + fotos +
                 ", descricao='" + descricao + '\'' +
-                ", aluguel='" + aluguel + '\'' +
+                ", aluguel='" + valorAluguel + '\'' +
                 ", contato='" + contato + '\'' +
                 '}';
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringList(fotos);
-        dest.writeString(descricao);
-        dest.writeString(aluguel);
-        dest.writeString(contato);
-    }
 }

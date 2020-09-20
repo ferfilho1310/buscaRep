@@ -9,9 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:background="@drawable/corner_window_enter"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/corner_window_enter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,29 +20,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
             android:gravity="center"
             android:padding="10dp"
             android:text="Preencha os dados para realizar seu cadastro"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,9 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,9 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_senha_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,19 +80,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Confirma Senha">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_confirma_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:layout_marginTop="12dp"
-            android:text="Cadastrar"
-            android:textColor="@android:color/white"
+            android:id="@+id/btn_cadastrar_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_radius"/>
+            android:background="@drawable/border_radius"
+            android:text="Cadastrar"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/prg_cadastrar_user"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 

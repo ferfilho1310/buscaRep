@@ -29,9 +29,7 @@ public class AnuncioDao implements IAnuncioDao {
 
     @Override
     public FirestoreRecyclerOptions<Anuncio> buscaAnuncios() {
-
         query = collectionAnuncios.orderBy(SharedEnums.ordenacaoDb.ordenacaoDbBuscaAnuncio, Query.Direction.ASCENDING);
-
         firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<Anuncio>()
                 .setQuery(query, Anuncio.class)
                 .build();
