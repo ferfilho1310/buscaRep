@@ -13,11 +13,9 @@ public class AnuncioController implements IAnuncioController {
     private static AnuncioController anuncioController;
     private static IAnuncioDao iAnuncioDao;
 
-    public static synchronized  AnuncioController getInstance(){
-        if(anuncioController == null){
-            anuncioController = new AnuncioController();
-            iAnuncioDao = new AnuncioDao();
-        }
+    public static synchronized AnuncioController getInstance() {
+        anuncioController = new AnuncioController();
+        iAnuncioDao = new AnuncioDao();
         return anuncioController;
     }
 

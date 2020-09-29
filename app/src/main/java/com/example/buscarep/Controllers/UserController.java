@@ -16,10 +16,8 @@ public class UserController implements IUserController {
     private static IUserDao iUserDao;
 
     public static synchronized UserController getInstance() {
-        if (userController == null) {
-            userController = new UserController();
-            iUserDao = new UserDao();
-        }
+        userController = new UserController();
+        iUserDao = new UserDao();
         return userController;
     }
 
@@ -30,7 +28,7 @@ public class UserController implements IUserController {
 
     @Override
     public void mCadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button) {
-       iUserDao.cadastrarUser(usuario, activity, progressBar, button);
+        iUserDao.cadastrarUser(usuario, activity, progressBar, button);
     }
 
 }
