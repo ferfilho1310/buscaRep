@@ -99,15 +99,19 @@ public class UserDao implements IUserDao {
                     } catch (FirebaseAuthWeakPasswordException e) {
                         Toast.makeText(activity, "Senha inferior a 6 caracteres", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        button.setVisibility(View.VISIBLE);
                     } catch (FirebaseAuthInvalidCredentialsException e) {
                         Toast.makeText(activity, "E-mail inválido", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        button.setVisibility(View.VISIBLE);
                     } catch (FirebaseAuthUserCollisionException e) {
                         Toast.makeText(activity, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        button.setVisibility(View.VISIBLE);
                     } catch (Exception e) {
                         Toast.makeText(activity, "Ops!Erro a cadastrar o usuário", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        button.setVisibility(View.VISIBLE);
                     }
                 }
             }

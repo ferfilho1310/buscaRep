@@ -9,7 +9,9 @@ public class GetViewData extends HashMap<String, Object> {
     private static GetViewData getViewData;
 
     public static synchronized GetViewData getInstance(){
-        getViewData = new GetViewData();
+        if(getViewData == null) {
+            getViewData = new GetViewData();
+        }
         return  getViewData;
     }
 
