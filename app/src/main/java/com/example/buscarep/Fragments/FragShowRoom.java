@@ -24,7 +24,6 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
 
     private int page;
     RecyclerView mRcShowRoom;
-    ProgressBar pganuncio;
     ReclerviewRoom reclerviewRoomAdapter;
     TextView nenhumDadoEncontrado;
     Button btnAdicionarAnuncio;
@@ -49,21 +48,21 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
         mRcShowRoom = view.findViewById(R.id.rc_show_room);
-        pganuncio = view.findViewById(R.id.pganuncio);
         nenhumDadoEncontrado = view.findViewById(R.id.nenhum_dado_encontrado);
         btnAdicionarAnuncio = view.findViewById(R.id.btn_adicionar_anuncios_frag_main);
 
         reclerviewRoomAdapter = new ReclerviewRoom(AnuncioController.getInstance().buscaAnuncios());
 
-        pganuncio.setVisibility(View.VISIBLE);
-
-        if (mRcShowRoom.getAdapter() != null) {
-            pganuncio.setVisibility(View.GONE);
-        } else {
-            mRcShowRoom.setVisibility(View.GONE);
-            nenhumDadoEncontrado.setVisibility(View.VISIBLE);
-            pganuncio.setVisibility(View.GONE);
-        }
+        mRcShowRoom.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                if (dy < 0) {
+                    btnAdicionarAnuncio.setVisibility(View.VISIBLE);
+                } else if (dy > 0) {
+                    btnAdicionarAnuncio.setVisibility(View.GONE);
+                }
+            }
+        });
 
         btnAdicionarAnuncio.setOnClickListener(this);
 

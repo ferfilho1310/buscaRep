@@ -44,6 +44,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_nome"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -57,6 +58,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_email_cadastro"
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -66,10 +68,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             android:hint="Senha">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_senha_cadastro"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -79,10 +83,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             android:hint="Confirma Senha">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_confirma_senha"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
