@@ -7,8 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buscarep.Model.Anuncio;
-import com.example.buscarep.Model.Usuario;
+import com.example.buscarep.mvc.Model.Anuncio;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 

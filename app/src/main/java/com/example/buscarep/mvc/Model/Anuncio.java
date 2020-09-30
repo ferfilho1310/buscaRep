@@ -1,4 +1,4 @@
-package com.example.buscarep.Model;
+package com.example.buscarep.mvc.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

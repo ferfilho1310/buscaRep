@@ -1,4 +1,4 @@
-package com.example.buscarep.Activity;
+package com.example.buscarep.mvc.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.buscarep.Controllers.UserController;
+import com.example.buscarep.mvc.Controllers.UserController;
 import com.example.buscarep.DialogHelpers.AbstratcAlertDialog;
 import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailSenhaVazio;
 import com.example.buscarep.DialogHelpers.ButtomSheetDialogEmailVazio;
-import com.example.buscarep.Model.Usuario;
+import com.example.buscarep.mvc.Model.Usuario;
 import com.example.buscarep.R;
 import com.example.buscarep.Util.IntentHelper;
 import com.example.buscarep.Util.MensagemSistema;

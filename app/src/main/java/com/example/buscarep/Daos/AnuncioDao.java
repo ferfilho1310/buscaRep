@@ -2,7 +2,7 @@ package com.example.buscarep.Daos;
 
 import com.example.buscarep.Enums.SharedEnums;
 import com.example.buscarep.Interfaces.IAnuncioDao;
-import com.example.buscarep.Model.Anuncio;
+import com.example.buscarep.mvc.Model.Anuncio;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;

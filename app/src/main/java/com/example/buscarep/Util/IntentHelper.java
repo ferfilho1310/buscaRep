@@ -3,9 +3,7 @@ package com.example.buscarep.Util;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.example.buscarep.Activity.MainActivity;
 import com.example.buscarep.Interfaces.IIntentHelper;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 public class IntentHelper implements IIntentHelper {
 

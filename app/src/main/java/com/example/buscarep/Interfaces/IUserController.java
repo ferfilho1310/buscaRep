@@ -5,7 +5,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.buscarep.Model.Usuario;
+import com.example.buscarep.mvc.Model.Usuario;
 
 public interface IUserController {
 

@@ -1,4 +1,4 @@
-package com.example.buscarep.Controllers;
+package com.example.buscarep.mvc.Controllers;
 
 import android.app.Activity;
 import android.widget.Button;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.buscarep.Daos.UserDao;
 import com.example.buscarep.Interfaces.IUserController;
 import com.example.buscarep.Interfaces.IUserDao;
-import com.example.buscarep.Model.Usuario;
+import com.example.buscarep.mvc.Model.Usuario;
 
 public class UserController implements IUserController {
 

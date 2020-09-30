@@ -1,4 +1,4 @@
-package com.example.buscarep.Model;
+package com.example.buscarep.mvc.Model;
 
 public class Usuario {
 

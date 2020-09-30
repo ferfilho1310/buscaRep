@@ -1,24 +1,23 @@
 package com.example.buscarep.Fragments;
 
-import android.app.DownloadManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buscarep.Activity.EntrarActView;
-import com.example.buscarep.Controllers.AnuncioController;
+import com.example.buscarep.mvc.View.EntrarActView;
+import com.example.buscarep.mvc.Controllers.AnuncioController;
 import com.example.buscarep.R;
 import com.example.buscarep.Util.IntentHelper;
-import com.google.firebase.firestore.Query;
 
 public class FragShowRoom extends Fragment implements View.OnClickListener {
 
@@ -42,11 +41,13 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
         page = getArguments().getInt("FirstPage", 0);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+
         mRcShowRoom = view.findViewById(R.id.rc_show_room);
         nenhumDadoEncontrado = view.findViewById(R.id.nenhum_dado_encontrado);
         btnAdicionarAnuncio = view.findViewById(R.id.btn_adicionar_anuncios_frag_main);
@@ -63,7 +64,6 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
                 }
             }
         });
-
         btnAdicionarAnuncio.setOnClickListener(this);
 
         return view;

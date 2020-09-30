@@ -1,16 +1,15 @@
-package com.example.buscarep.Activity;
+package com.example.buscarep.mvc.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.wifi.hotspot2.pps.Credential;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.example.buscarep.Controllers.UserController;
-import com.example.buscarep.Model.Usuario;
+import com.example.buscarep.mvc.Controllers.UserController;
+import com.example.buscarep.mvc.Model.Usuario;
 import com.example.buscarep.R;
 
 public class CadastrarActView extends AppCompatActivity implements View.OnClickListener {

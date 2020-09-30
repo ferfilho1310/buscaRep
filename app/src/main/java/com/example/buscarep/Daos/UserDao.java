@@ -1,7 +1,6 @@
 package com.example.buscarep.Daos;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +10,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.buscarep.Activity.MainActivity;
+import com.example.buscarep.mvc.View.MainActivity;
 import com.example.buscarep.DialogHelpers.AbstratcAlertDialog;
-import com.example.buscarep.Enums.SharedEnums;
 import com.example.buscarep.Interfaces.IUserDao;
-import com.example.buscarep.Model.Usuario;
-import com.example.buscarep.Util.GetViewData;
+import com.example.buscarep.mvc.Model.Usuario;
 import com.example.buscarep.Util.IntentHelper;
 import com.example.buscarep.Util.MensagemSistema;
 import com.google.android.gms.tasks.OnCompleteListener;

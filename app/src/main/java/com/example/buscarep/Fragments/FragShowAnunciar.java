@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.buscarep.Activity.EntrarActView;
+import com.example.buscarep.mvc.View.EntrarActView;
 import com.example.buscarep.R;
 import com.example.buscarep.Util.IntentHelper;
 
