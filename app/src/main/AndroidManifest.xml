@@ -8,9 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvc.View.CadastrarActView"></activity>
-        <activity
-            android:name=".mvc.View.MainActivity"
+        <activity android:name=".mvc.View.ModoUserActView"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mvc.View.CadastrarActView"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".mvc.View.MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".mvc.View.EntrarActView"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -4,9 +4,11 @@ import android.app.Activity;
 
 public interface IIntentHelper {
 
-    void SimpleIntent(Activity activity, Class clazz);
+    void simpleIntent(Activity activity, Class clazz);
 
-    void IntentWithFinish(Activity activity, Class clazz);
+    void intentWithFinish(Activity activity, Class clazz);
 
-    void IntentWithFinishAndFlags(Activity activity, Class clazz);
+    void intentWithFinishAndFlags(Activity activity, Class clazz);
+
+    void intentWithPutExtra(Activity activity, Class clazz, boolean showButtonAnunciar, String idPutExtra);
 }

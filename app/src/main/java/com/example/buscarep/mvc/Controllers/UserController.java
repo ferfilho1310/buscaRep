@@ -31,4 +31,9 @@ public class UserController implements IUserController {
         iUserDao.cadastrarUser(usuario, activity, progressBar, button);
     }
 
+    @Override
+    public boolean mPersisteUser(Activity activity, Class clazz) {
+        return iUserDao.verificaUserLogged(activity,clazz);
+    }
+
 }

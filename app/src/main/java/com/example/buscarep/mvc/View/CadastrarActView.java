@@ -37,7 +37,6 @@ public class CadastrarActView extends AppCompatActivity implements View.OnClickL
         prg_cadastrar_user = findViewById(R.id.prg_cadastrar_user);
 
         btn_cadastrar_user.setOnClickListener(this);
-
     }
 
     @Override

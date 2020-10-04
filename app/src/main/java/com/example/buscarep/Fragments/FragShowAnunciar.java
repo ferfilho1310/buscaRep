@@ -14,11 +14,12 @@ import com.example.buscarep.mvc.View.EntrarActView;
 import com.example.buscarep.R;
 import com.example.buscarep.Util.IntentHelper;
 
-public class FragShowAnunciar extends Fragment implements View.OnClickListener{
+public class FragShowAnunciar extends Fragment implements View.OnClickListener {
 
     Button btnAdicionarAnucios;
-
+    private boolean escondeBotao;
     private int page;
+    private boolean mostraBotao;
 
     public static FragShowAnunciar newInstance(int page) {
         FragShowAnunciar fragmentFirst = new FragShowAnunciar();
@@ -31,27 +32,33 @@ public class FragShowAnunciar extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        page = getArguments().getInt("SecondPage",0);
+        page = getArguments().getInt("SecondPage", 0);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_anunciar, container, false);
-        btnAdicionarAnucios = view.findViewById(R.id.btn_adicionar_anuncios_frag_meus_anuncios);
+        escondeBotao =  getActivity().getIntent().getBooleanExtra("mostraBotao",false);
+        mostraBotao = getActivity().getIntent().getBooleanExtra("mostraBotaoAnunciante", true);
 
+        btnAdicionarAnucios = view.findViewById(R.id.btn_adicionar_anuncios_frag_meus_anuncios);
         btnAdicionarAnucios.setOnClickListener(this);
 
-         return view;
+        if(escondeBotao){
+            btnAdicionarAnucios.setVisibility(View.GONE);
+        } else if(mostraBotao){
+            btnAdicionarAnucios.setVisibility(View.VISIBLE);
+        }
+        return view;
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_adicionar_anuncios_frag_meus_anuncios:
-                IntentHelper.getInstance().SimpleIntent(getActivity(), EntrarActView.class);
+                IntentHelper.getInstance().simpleIntent(getActivity(), EntrarActView.class);
                 break;
         }
-
     }
 }

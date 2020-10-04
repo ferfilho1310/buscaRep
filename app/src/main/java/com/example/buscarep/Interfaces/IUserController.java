@@ -12,4 +12,6 @@ public interface IUserController {
     void mEntrar(Usuario usuario, Activity activity, ProgressBar progressBar, Button button, TextView textView);
 
     void mCadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button);
+
+    boolean mPersisteUser(Activity activity, Class clazz);
 }

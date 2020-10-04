@@ -33,7 +33,7 @@ import java.util.Map;
 public class UserDao implements IUserDao {
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    CollectionReference db_users = FirebaseFirestore.getInstance().collection("Users");
+    CollectionReference db_users = FirebaseFirestore.getInstance().collection("users");
 
     @Override
     public void entrarUser(Usuario usuario, final Activity activity, final ProgressBar progressBar, final Button button, final TextView textView) {
@@ -51,7 +51,7 @@ public class UserDao implements IUserDao {
                             progressBar.setVisibility(View.VISIBLE);
                             button.setVisibility(View.GONE);
                             textView.setVisibility(View.GONE);
-                            IntentHelper.getInstance().IntentWithFinish(activity, MainActivity.class);
+                            IntentHelper.getInstance().intentWithFinish(activity, MainActivity.class);
                         } else {
                             progressBar.setVisibility(View.GONE);
                             button.setVisibility(View.VISIBLE);
@@ -88,8 +88,7 @@ public class UserDao implements IUserDao {
                     progressBar.setVisibility(View.GONE);
                     button.setVisibility(View.VISIBLE);
 
-                    IntentHelper.getInstance().IntentWithFinishAndFlags(activity, MainActivity.class);
-
+                    IntentHelper.getInstance().intentWithFinishAndFlags(activity, MainActivity.class);
                 } else if (!task.isSuccessful()) {
                     try {
                         throw task.getException();
@@ -119,6 +118,16 @@ public class UserDao implements IUserDao {
                 Log.i(MensagemSistema.TAG, "Erro desconhecido" + e);
             }
         });
+    }
+
+    @Override
+    public boolean verificaUserLogged(Activity activity, Class clazz) {
+        boolean logado = false;
+        if (firebaseAuth.getCurrentUser() != null) {
+            IntentHelper.getInstance().intentWithFinish(activity,clazz);
+            logado = true;
+        }
+        return logado;
     }
 
 }

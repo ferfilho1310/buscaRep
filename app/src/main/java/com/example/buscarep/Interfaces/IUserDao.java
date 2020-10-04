@@ -12,4 +12,6 @@ public interface IUserDao {
     void entrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button, TextView textView);
 
     void cadastrarUser(Usuario usuario, Activity activity, ProgressBar progressBar, Button button);
+
+    boolean verificaUserLogged(Activity activity, Class clazz);
 }

@@ -27,6 +27,9 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
     TextView nenhumDadoEncontrado;
     Button btnAdicionarAnuncio;
 
+    boolean escondeBotao;
+    boolean mostrabotao;
+
     public static FragShowRoom newInstance(int page) {
         FragShowRoom fragmentFirst = new FragShowRoom();
         Bundle args = new Bundle();
@@ -47,10 +50,18 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+        escondeBotao = getActivity().getIntent().getBooleanExtra("mostraBotao", false);
+        mostrabotao = getActivity().getIntent().getBooleanExtra("mostraBotaoAnunciante", true);
 
         mRcShowRoom = view.findViewById(R.id.rc_show_room);
         nenhumDadoEncontrado = view.findViewById(R.id.nenhum_dado_encontrado);
         btnAdicionarAnuncio = view.findViewById(R.id.btn_adicionar_anuncios_frag_main);
+
+        if (escondeBotao) {
+            btnAdicionarAnuncio.setVisibility(View.GONE);
+        } else if (mostrabotao) {
+            btnAdicionarAnuncio.setVisibility(View.VISIBLE);
+        }
 
         reclerviewRoomAdapter = new ReclerviewRoom(AnuncioController.getInstance().buscaAnuncios());
 
@@ -74,7 +85,7 @@ public class FragShowRoom extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.btn_adicionar_anuncios_frag_main:
-                IntentHelper.getInstance().SimpleIntent(getActivity(), EntrarActView.class);
+                IntentHelper.getInstance().simpleIntent(getActivity(), EntrarActView.class);
                 break;
         }
 

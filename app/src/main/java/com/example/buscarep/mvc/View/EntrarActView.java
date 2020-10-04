@@ -56,7 +56,7 @@ public class EntrarActView extends AppCompatActivity implements View.OnClickList
                 mValidacaoEmailSenha(usuario);
                 break;
             case R.id.txt_cadastrar:
-                IntentHelper.getInstance().SimpleIntent(this,CadastrarActView.class);
+                IntentHelper.getInstance().simpleIntent(this,CadastrarActView.class);
                 break;
         }
     }

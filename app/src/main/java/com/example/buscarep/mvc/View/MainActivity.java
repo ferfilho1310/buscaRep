@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         vpPager.setAdapter(pageAdapter);
         tabLayout.setupWithViewPager(vpPager);
-        tabLayout.getTabAt(SharedEnums.numeroTab.firstTab).setIcon(R.drawable.ic_baseline_house_24);
-        tabLayout.getTabAt(SharedEnums.numeroTab.secondTab).setIcon(R.drawable.ic_baseline_event_24);
 
         vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

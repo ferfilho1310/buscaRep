@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "350502866079",
+    "firebase_url": "https://buscarep-7b853.firebaseio.com",
+    "project_id": "buscarep-7b853",
+    "storage_bucket": "buscarep-7b853.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350502866079:android:00b0bbd7c4719b8b6e26aa",
+        "android_client_info": {
+          "package_name": "com.example.buscarep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350502866079-gk5bbo482e0icd080vtrdmrlnuqdli3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buscarep",
+            "certificate_hash": "1d24b9e0ec9615a5ed2f280f9f637daa3b099c5e"
+          }
+        },
+        {
+          "client_id": "350502866079-sdo823p4mshanfp6toa4oasd32bgqt53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApR9IqK0tRZ5g3IFU6kWio054SyJCpr6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350502866079-sdo823p4mshanfp6toa4oasd32bgqt53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

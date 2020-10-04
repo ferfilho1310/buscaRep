@@ -13,11 +13,13 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         app:tabGravity="fill"
+        android:padding="8dp"
         app:tabIndicatorColor="@android:color/white"
         app:tabMode="fixed"
         app:tabTextColor="@android:color/white" />
 
     <androidx.viewpager.widget.ViewPager
+        android:padding="8dp"
         android:id="@+id/vpPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

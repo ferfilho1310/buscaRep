@@ -17,22 +17,29 @@ public class IntentHelper implements IIntentHelper {
     }
 
     @Override
-    public void SimpleIntent(Activity activity, Class clazz){
+    public void simpleIntent(Activity activity, Class clazz){
         Intent intent = new Intent(activity,clazz);
         activity.startActivity(intent);
     }
 
     @Override
-    public void IntentWithFinish(Activity activity, Class clazz){
+    public void intentWithFinish(Activity activity, Class clazz){
         Intent intent = new Intent(activity,clazz);
         activity.startActivity(intent);
         activity.finish();
     }
 
     @Override
-    public void IntentWithFinishAndFlags(Activity activity, Class clazz) {
+    public void intentWithFinishAndFlags(Activity activity, Class clazz) {
         Intent intent = new Intent(activity, clazz);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(intent);
+    }
+
+    @Override
+    public void intentWithPutExtra(Activity activity, Class clazz, boolean showButtonAnunciar, String idPutExtra) {
+        Intent intent = new Intent(activity,clazz);
+        intent.putExtra(idPutExtra,showButtonAnunciar);
         activity.startActivity(intent);
     }
 
